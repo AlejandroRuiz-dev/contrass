@@ -16,7 +16,7 @@ class CreatePasswordsTable extends Migration
         Schema::create('passwords', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tittle');
-            $table->string('id_categorie');
+            $table->unsignedInteger('id_categorie');
             $table->foreign('id_categorie')->references('id')->on('categories');
             $table->timestamp('created_at')->nullable();
         });
